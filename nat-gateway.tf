@@ -84,11 +84,11 @@ resource "aws_route_table" "private_route_table_az2" {
 
   route {
     cidr_block      = "0.0.0.0/0"
-    nat_gateway_id  = aws_eip.eip_for_nat_gateway_az2.id
+    nat_gateway_id  = aws_nat_gateway.nat_gateway_az2.id
   }
 
   tags   = {
-    Name = "private route table az1"
+    Name = "private route table az2"
   }
 }
 

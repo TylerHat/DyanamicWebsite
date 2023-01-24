@@ -49,3 +49,27 @@ variable "ssh_location" {
   type        = string
 }
 
+#rds variables
+variable "database_snapshot_identifier" {
+  default = "arn:aws:rds:us-east-1:127408405916:snapshot:dynamicweb-db-snapshot"
+  description = "database snapshot arn"
+  type        = string
+}
+
+variable "database_instance_class" {
+  default     = "db.t2.micro"
+  description = "database instance type"
+  type        = string
+}
+
+variable "database_instance_identifier" {
+  default     = "dynamicweb-db"
+  description = "database instance type"
+  type        = string
+}
+
+variable "multi_az_deployment" {
+  default     = "false"
+  description = "create a standby db instance"
+  type        = bool
+}
