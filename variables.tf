@@ -69,7 +69,14 @@ variable "database_instance_identifier" {
 }
 
 variable "multi_az_deployment" {
-  default     = "false"
+  default     = false
   description = "create a standby db instance"
   type        = bool
+}
+
+#App load balencer variables
+variable "ssl_cert_arn" {
+  default     = "arn:aws:acm:us-east-1:127408405916:certificate/dbecab0b-de94-40da-8c8c-3fcaf3417f16"
+  description = "ssl certificate arn"
+  type        = string
 }
