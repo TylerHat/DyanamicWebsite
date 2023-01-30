@@ -24,7 +24,7 @@ resource "aws_lb" "application_load_balancer" {
 # create target group
 # terraform aws create target group
 resource "aws_lb_target_group" "alb_target_group" {
-  name        = "dev website tg"
+  name        = "dev-website-tg"
   target_type = "instance"
   port        = 80
   protocol    = "HTTP"

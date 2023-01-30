@@ -51,7 +51,7 @@ variable "ssh_location" {
 
 #rds variables
 variable "database_snapshot_identifier" {
-  default = "arn:aws:rds:us-east-1:127408405916:snapshot:dynamicweb-db-snapshot"
+  default = "arn:aws:rds:us-east-1:127408405916:snapshot:snapshot-dev-db-final"
   description = "database snapshot arn"
   type        = string
 }
@@ -76,7 +76,54 @@ variable "multi_az_deployment" {
 
 #App load balencer variables
 variable "ssl_cert_arn" {
-  default     = "arn:aws:acm:us-east-1:127408405916:certificate/dbecab0b-de94-40da-8c8c-3fcaf3417f16"
+  default     = "arn:aws:acm:us-east-1:127408405916:certificate/2f0e4232-54b8-41ea-a416-7af4d5cc7674"
   description = "ssl certificate arn"
+  type        = string
+}
+
+#SNS topic variables
+variable "operator_email" {
+  default     = "hafield.tyler@gmail.com"
+  description = "email address"
+  type        = string
+}
+
+#asg variables
+variable "launch_template_name" {
+  default     = "dynamic-web-launch-template"
+  description = "name of template"
+  type        = string
+}
+
+#this contains the ami image that has the website already preconfigured on it
+variable "ec2_image_id" {
+  default     = "ami-0b5eea76982371e91"
+  description = "id of ami"
+  type        = string
+}
+
+variable "ec2_instance_type" {
+  default     = "t2.micro"
+  description = "ec2 instance type"
+  type        = string
+}
+
+variable "key_pair_ec2" {
+  default     = "DynamicKeyPair"
+  description = "name of key pair"
+  type        = string
+}
+
+#route53 variables
+variable "domain_name" {
+  default     = "yohoenterprise.com"
+  description = "name of domain name"
+  type        = string
+}
+
+
+variable "record_name" {
+  default     = "www"
+  description = "sub of the domain name"
   type        = string
 }
